@@ -1,0 +1,78 @@
+Fractol Project Roadmap
+Here's a comprehensive roadmap to build the fractol project from scratch:
+1. Project Setup and Planning
+
+Create your project repository
+Set up a basic Makefile
+Plan your code structure (headers, source files)
+Understand the mathematical concepts behind fractals
+
+2. Graphics Library Setup
+
+Install and configure the MinilibX library (the graphics library commonly used at 42)
+Create a basic window
+Implement a simple pixel-plotting function
+Set up event handlers for keyboard and mouse
+
+3. Mathematical Foundation
+
+Implement complex number operations
+Understand the iterative equations for your required fractals
+Set up coordinate mapping between the window and the mathematical space
+
+4. Basic Fractal Rendering
+
+Start with the Mandelbrot set (typically the simplest)
+Implement the core algorithm:
+
+For each pixel, convert to complex coordinates
+Apply the iterative formula until divergence or max iterations
+Color the pixel based on iteration count
+
+
+Create a color scheme/gradient function
+
+5. Optimization
+
+Look for ways to optimize your rendering algorithm
+Consider multi-threading if allowed by the subject
+Implement render caching if needed
+
+6. Julia Set Implementation
+
+Add functionality to generate Julia sets
+Allow passing parameters to control Julia set appearance
+Implement a way to select Julia set parameter via mouse position
+
+7. Additional Fractals
+
+Implement other fractal types (Burning Ship, Tricorn, etc.)
+Add a menu or key bindings to switch between fractals
+
+8. Interactive Features
+
+Implement zooming (mouse wheel)
+Add panning/navigation (arrow keys or mouse drag)
+Create a way to adjust max iterations
+Add ability to shift color palettes
+
+9. Bonus Features
+
+Implement real-time parameter adjustment for Julia sets
+Add more exotic fractal types
+Create animation capabilities
+Add ability to save images
+Implement smooth coloring algorithms
+
+10. Polishing
+
+Optimize for performance
+Add helpful UI elements or instructions
+Clean up code and ensure it meets 42's norm
+Prepare for project defense
+
+11. Testing and Debugging
+
+Test on different machines
+Handle edge cases (extreme zoom, parameter values)
+Fix any visual artifacts or bugs
