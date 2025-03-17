@@ -16,7 +16,8 @@
 # include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
-# include <mlx.h> 
+#include "minilibx-linux/mlx.h"
+
 
 
 #define WIDTH  800
