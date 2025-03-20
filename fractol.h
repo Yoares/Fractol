@@ -6,7 +6,7 @@
 /*   By: ykhoussi <ykhoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 00:08:12 by ykhoussi          #+#    #+#             */
-/*   Updated: 2025/03/10 02:38:18 by ykhoussi         ###   ########.fr       */
+/*   Updated: 2025/03/20 07:15:02 by ykhoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@
 #include "minilibx-linux/mlx.h"
 
 
-
+#define DEFAULT_REAL -2.0
+#define DEFAULT_IMAG 2.0
 #define WIDTH  800
 #define HEIGHT 600
 #define SQUARE_SIZE 100
@@ -40,4 +41,10 @@ typedef struct  s_data
     int		endian;
 }	t_data;
 
+int	ft_strcmp(char *s1, char *s2);
+t_data	init_mlx_window(void);
+double ft_atof(const char *str);
+void julia(t_data *data, double real, double imag);
+void mandelbrot(t_data *data);
+void error_message();
 #endif

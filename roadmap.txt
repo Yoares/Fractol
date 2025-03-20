@@ -1,3 +1,12 @@
+src/
+  ├── main.c        // Calls the MLX initialization and fractal rendering
+  ├── mlx_init.c    // Initializes MLX window
+  ├── mandelbrot.c  // Mandelbrot rendering logic
+  ├── julia.c       // Julia rendering logic
+  └── mlx_utils.c   // Additional MLX utilities (e.g., color, image management)
+
+
+
 Fractol Project Roadmap
 Here's a comprehensive roadmap to build the fractol project from scratch:
 1. Project Setup and Planning
