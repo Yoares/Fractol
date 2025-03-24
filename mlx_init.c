@@ -6,7 +6,7 @@
 /*   By: ykhoussi <ykhoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 05:56:56 by ykhoussi          #+#    #+#             */
-/*   Updated: 2025/03/20 07:15:15 by ykhoussi         ###   ########.fr       */
+/*   Updated: 2025/03/23 00:22:06 by ykhoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,14 @@ t_data	init_mlx_window(void)
 
     // Get the image address for pixel manipulation
     data.addr = mlx_get_data_addr(data.img, &data.bits_per_pixel, &data.line_length, &data.endian);
+
+    // Set fractal parameters
+    data.min_real = -2.0;
+    data.max_real = 2.0;
+    data.min_imag = -2.0;
+    data.max_imag = 2.0;
+    data.zoom = 1.0;
+    data.max_iter = 50;  // Set a default number of iterations for Mandelbrot
 
     return data;
 }
