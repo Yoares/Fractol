@@ -6,7 +6,7 @@
 /*   By: ykhoussi <ykhoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 00:08:12 by ykhoussi          #+#    #+#             */
-/*   Updated: 2025/03/23 00:09:40 by ykhoussi         ###   ########.fr       */
+/*   Updated: 2025/04/04 13:51:01 by ykhoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ typedef struct  s_data
     int		bits_per_pixel;
     int		line_length;
     int		endian;
-    double  zoom;              // Zoom level
+    double  zoom;              
     double  offset_x;          // Horizontal shift
     double  offset_y;          // Vertical shift
     int     max_iter; 
