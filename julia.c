@@ -6,10 +6,13 @@
 /*   By: ykhoussi <ykhoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 06:40:58 by ykhoussi          #+#    #+#             */
-/*   Updated: 2025/03/20 07:08:38 by ykhoussi         ###   ########.fr       */
+/*   Updated: 2025/04/05 11:59:19 by ykhoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-void julia(t_data *data, double real, double imag){}
+void julia(t_data *data, double real, double imag)
+{
+    
+}

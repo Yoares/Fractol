@@ -6,7 +6,7 @@
 /*   By: ykhoussi <ykhoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 00:07:13 by ykhoussi          #+#    #+#             */
-/*   Updated: 2025/03/20 06:47:06 by ykhoussi         ###   ########.fr       */
+/*   Updated: 2025/04/06 18:24:03 by ykhoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int main(int ac, char **av)
 {
 	t_data data;
-	double (real), (imag);
+	double real, imag;
 
     data = init_mlx_window();
 	if (ac == 2)

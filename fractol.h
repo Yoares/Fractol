@@ -6,7 +6,7 @@
 /*   By: ykhoussi <ykhoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 00:08:12 by ykhoussi          #+#    #+#             */
-/*   Updated: 2025/04/04 13:51:01 by ykhoussi         ###   ########.fr       */
+/*   Updated: 2025/04/06 18:20:09 by ykhoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,8 @@
 
 #define DEFAULT_REAL -2.0
 #define DEFAULT_IMAG 2.0
-#define WIDTH  800
-#define HEIGHT 600
-#define SQUARE_SIZE 100
-#define START_X  (WIDTH / 2 - SQUARE_SIZE / 2)
-#define START_Y  (HEIGHT / 2 - SQUARE_SIZE / 2)
+#define WIDTH  1000
+#define HEIGHT 800
 #define COLOR 0x00FF0000  // Red
 #define MAX_ITER 50 // Maximum iterations for Mandelbrot calculation
 

@@ -6,7 +6,7 @@
 /*   By: ykhoussi <ykhoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 02:29:56 by ykhoussi          #+#    #+#             */
-/*   Updated: 2025/04/04 14:34:08 by ykhoussi         ###   ########.fr       */
+/*   Updated: 2025/04/06 18:19:33 by ykhoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	mlx_init_mande(t_data *data)
 	data->mlx = mlx_init();
 	data->win = mlx_new_window(data->mlx, WIDTH, HEIGHT, "mandelbrot");
 	data->img = mlx_new_image(data->mlx, WIDTH, HEIGHT);
-	data->addr = mlx_get_data_addr(data->mlx, &data->bits_per_pixel, &data->line_length, &data->endian);	
+	data->addr = mlx_get_data_addr(data->img, &data->bits_per_pixel, &data->line_length, &data->endian);	
 	data->zoom = 1.0;
     data->offset_x = 0.0;
     data->offset_y = 0.0;
@@ -26,7 +26,7 @@ void	mlx_init_mande(t_data *data)
 void pixel_to_complex(int x, int y, double *real, double *imag, t_data *data)
 {
 	*real = (data->min_real) + ((double)x / 800) * (data->max_real - data->min_real);
-	*imag = (data->min_imag) + ((double)x / 800) * (data->max_imag - data->min_imag);
+	*imag = (data->min_imag) + ((double)y / HEIGHT) * (data->max_imag - data->min_imag);
 }
 
 int	mandelbrot_itiration(double real, double imag, int max_iter)
@@ -56,8 +56,8 @@ void my_mlx_pixel_put(t_data *data, int x, int y, int color)
 
 void mandelbrot(t_data *data)
 {
-    int (x), (y), (iter), (color);
-    double (real), (imag);
+    int x, y, iter, color;
+    double real, imag;
 
 	y = 0;
 	while (y < HEIGHT)
