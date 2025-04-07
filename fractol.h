@@ -6,7 +6,7 @@
 /*   By: ykhoussi <ykhoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 00:08:12 by ykhoussi          #+#    #+#             */
-/*   Updated: 2025/04/06 18:20:09 by ykhoussi         ###   ########.fr       */
+/*   Updated: 2025/04/07 14:38:06 by ykhoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@
 #include "minilibx-linux/mlx.h"
 
 
-#define DEFAULT_REAL -2.0
-#define DEFAULT_IMAG 2.0
-#define WIDTH  1000
+#define DEFAULT_REAL -0.7
+#define DEFAULT_IMAG 0.27015
+#define WIDTH  800
 #define HEIGHT 800
 #define COLOR 0x00FF0000  // Red
 #define MAX_ITER 50 // Maximum iterations for Mandelbrot calculation
@@ -51,5 +51,6 @@ t_data	init_mlx_window(void);
 double ft_atof(const char *str);
 void julia(t_data *data, double real, double imag);
 void mandelbrot(t_data *data);
+void pixel_to_complex(int x, int y, double *real, double *imag, t_data *data);
 void error_message();
 #endif

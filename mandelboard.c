@@ -6,7 +6,7 @@
 /*   By: ykhoussi <ykhoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 02:29:56 by ykhoussi          #+#    #+#             */
-/*   Updated: 2025/04/06 18:19:33 by ykhoussi         ###   ########.fr       */
+/*   Updated: 2025/04/07 14:41:33 by ykhoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,6 @@ void mandelbrot(t_data *data)
 		}
 		y++;
 	}
+	mlx_put_image_to_window(data->mlx, data->win, data->img, 0, 0);
 	
 }
-
-

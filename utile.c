@@ -6,7 +6,7 @@
 /*   By: ykhoussi <ykhoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 04:27:51 by ykhoussi          #+#    #+#             */
-/*   Updated: 2025/03/20 07:13:05 by ykhoussi         ###   ########.fr       */
+/*   Updated: 2025/04/07 15:13:11 by ykhoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,39 +22,36 @@ int	ft_strcmp(char *s1, char *s2)
 	return(s1[i] - s2[i]);
 }
 void error_message()
-{}
+{
+	write(2, "Error: Invalid input or initialization failed.\n", 48);
+    write(2, "Usage: ./fractol [fractol_name]\n", 33);
+    write(2, "Available fractals: mandelbrot, julia\n", 39);
+    exit(1);
+}
 double ft_atof(const char *str)
 {
-    double	(r),(f);
-	int	s;
+    double result = 0.0;
+    double sign = 1.0;
+    double divisor = 10.0;
 
-	r = 0.0;
-	f = 0.0;
-	s = 1;
-
-	while(*str >= ' ' || (*str >= 9 && *str <= 13))
-		str++;
-	if (*str == '-' || *str == '+') 
-	{
-        if (*str == '-')
-            s = -1;
+    if (*str == '-') {
+        sign = -1.0;
         str++;
     }
-	while(*str >= '0' && *str <= '9')
-	{
-		r = r * 10 + (*str - 48);
-		str++;
-	}
-	if (*str == '.')
-	{
-		while (*str >= ' ' || (*str >= 9 && *str <= 13))
-			str++;
-		while(*str >= '0' && *str <= '9')
-		{
-			r += (*str - 48) * f;
-			f *= 0.1;
-			str++; 
-		}
-	}
-	return r * s;
+
+    while (*str >= '0' && *str <= '9') {
+        result = result * 10.0 + (*str - '0');
+        str++;
+    }
+
+    if (*str == '.') {
+        str++;
+        while (*str >= '0' && *str <= '9') {
+            result = result + (*str - '0') / divisor;
+            divisor *= 10.0;
+            str++;
+        }
+    }
+
+    return result * sign;
 }
