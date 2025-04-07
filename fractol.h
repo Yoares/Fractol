@@ -6,7 +6,7 @@
 /*   By: ykhoussi <ykhoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 00:08:12 by ykhoussi          #+#    #+#             */
-/*   Updated: 2025/04/07 14:38:06 by ykhoussi         ###   ########.fr       */
+/*   Updated: 2025/04/07 16:33:57 by ykhoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,9 @@ typedef struct  s_data
     double  max_real;
     double  min_imag;
     double  max_imag;
+    double  c_real;
+    double  c_img;
+    int     fractal_type;
 }	t_data;
 
 int	ft_strcmp(char *s1, char *s2);
@@ -52,5 +55,8 @@ double ft_atof(const char *str);
 void julia(t_data *data, double real, double imag);
 void mandelbrot(t_data *data);
 void pixel_to_complex(int x, int y, double *real, double *imag, t_data *data);
+int	key_hook(int keycode, t_data *data);
+int close_window(t_data *data);
 void error_message();
+int	m_zoom(int button, int x, int y, t_data *data);
 #endif

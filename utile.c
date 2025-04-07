@@ -6,7 +6,7 @@
 /*   By: ykhoussi <ykhoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 04:27:51 by ykhoussi          #+#    #+#             */
-/*   Updated: 2025/04/07 15:13:11 by ykhoussi         ###   ########.fr       */
+/*   Updated: 2025/04/07 15:30:13 by ykhoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,24 @@ void error_message()
     write(2, "Available fractals: mandelbrot, julia\n", 39);
     exit(1);
 }
+
+int	key_hook(int keycode, t_data *data)
+{
+	if (keycode == 65307)
+	{
+		mlx_destroy_window(data->mlx, data->win);
+		exit (0);
+	}
+	return (0);
+}
+
+int close_window(t_data *data)
+{
+    mlx_destroy_window(data->mlx, data->win);
+    exit(0);
+    return (0);
+}
+
 double ft_atof(const char *str)
 {
     double result = 0.0;
