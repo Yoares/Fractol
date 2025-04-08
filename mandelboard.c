@@ -6,7 +6,7 @@
 /*   By: ykhoussi <ykhoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 02:29:56 by ykhoussi          #+#    #+#             */
-/*   Updated: 2025/04/07 14:41:33 by ykhoussi         ###   ########.fr       */
+/*   Updated: 2025/04/08 16:24:37 by ykhoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	mlx_init_mande(t_data *data)
 }
 void pixel_to_complex(int x, int y, double *real, double *imag, t_data *data)
 {
-	*real = (data->min_real) + ((double)x / 800) * (data->max_real - data->min_real);
+	*real = (data->min_real) + ((double)x / WIDTH) * (data->max_real - data->min_real);
 	*imag = (data->min_imag) + ((double)y / HEIGHT) * (data->max_imag - data->min_imag);
 }
 
@@ -76,6 +76,5 @@ void mandelbrot(t_data *data)
 		}
 		y++;
 	}
-	mlx_put_image_to_window(data->mlx, data->win, data->img, 0, 0);
-	
+	mlx_put_image_to_window(data->mlx, data->win, data->img, 0, 0);	
 }

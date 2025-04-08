@@ -6,7 +6,7 @@
 /*   By: ykhoussi <ykhoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 06:40:58 by ykhoussi          #+#    #+#             */
-/*   Updated: 2025/04/07 14:43:36 by ykhoussi         ###   ########.fr       */
+/*   Updated: 2025/04/08 16:25:37 by ykhoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,17 @@ void julia(t_data *data, double real, double imag)
 	int x, y, iter, color;
     double z_real, z_imag;	
     
+	data->c_real = real;
+	data->c_img = imag;
 	y = 0;
 	while (y < HEIGHT)
 	{
 		x = 0;
 		while (x < WIDTH)
 		{
-			pixel_to_complex(x, y, &z_real, &z_imag, data);
-			iter = julia_iter(z_real, z_imag, real, imag, data->max_iter);
+			z_real = data->min_real + ((double)x / WIDTH) * (data->max_real - data->min_real);
+			z_imag = data->min_imag + ((double)y / HEIGHT) * (data->max_imag - data->min_imag);
+			iter = julia_iter(z_real, z_imag, data->c_real, data->c_img, data->max_iter);
             if (iter == data->max_iter)
                 color = 0x000000;
             else

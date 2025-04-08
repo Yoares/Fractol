@@ -6,7 +6,7 @@
 /*   By: ykhoussi <ykhoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 00:07:13 by ykhoussi          #+#    #+#             */
-/*   Updated: 2025/04/07 16:03:56 by ykhoussi         ###   ########.fr       */
+/*   Updated: 2025/04/08 16:30:13 by ykhoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int main(int ac, char **av)
 			data = init_mlx_window();
 			real = ft_atof(av[2]);
 			imag = ft_atof(av[3]);
-			printf("Real: %lf, Imag: %lf\n", real, imag);
+			data.fractal_type = 1;
 			julia(&data, real, imag);
 		}
 		else 
