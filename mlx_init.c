@@ -41,7 +41,6 @@ t_data	init_mlx_window(void)
     data.max_imag = 2.0;
     data.zoom = 1.0;
     data.max_iter = 50;
-
     return (data);
 }
 

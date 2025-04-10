@@ -43,10 +43,19 @@ int close_window(t_data *data)
 {
     mlx_destroy_window(data->mlx, data->win);
     exit(0);
-    return (0);
 }
 
-double ft_atof(const char *str)
+int failed(t_data *data)
+{
+    mlx_destroy_window(data->mlx, data->win);
+    mlx_destroy_image(data->mlx ,data->img);
+    mlx_destroy_display(data->mlx);
+    free(data->mlx);
+    error_message();
+    exit(1);
+}
+
+double ft_atof(const char *str, t_data *data)
 {
     double result = 0.0;
     double sign = 1.0;
@@ -70,6 +79,7 @@ double ft_atof(const char *str)
             str++;
         }
     }
-
+    if(*str)
+        failed(data);
     return result * sign;
 }

@@ -22,10 +22,7 @@
 #define DEFAULT_REAL -0.7
 #define DEFAULT_IMAG 0.27015
 #define WIDTH  800
-#define HEIGHT 800
-#define COLOR 0x00FF0000  // Red
-#define MAX_ITER 50 // Maximum iterations for Mandelbrot calculation
-
+#define HEIGHT 600
 
 typedef struct  s_data
 {
@@ -51,7 +48,7 @@ typedef struct  s_data
 
 int	ft_strcmp(char *s1, char *s2);
 t_data	init_mlx_window(void);
-double ft_atof(const char *str);
+double ft_atof(const char *str, t_data *data);
 void julia(t_data *data, double real, double imag);
 void mandelbrot(t_data *data);
 void pixel_to_complex(int x, int y, double *real, double *imag, t_data *data);
@@ -59,4 +56,5 @@ int	key_hook(int keycode, t_data *data);
 int close_window(t_data *data);
 void error_message();
 int	m_zoom(int button, int x, int y, t_data *data);
+int failed(t_data *data);
 #endif

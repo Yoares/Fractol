@@ -40,8 +40,8 @@ int main(int ac, char **av)
 		if (!ft_strcmp(av[1], "julia"))
 		{
 			data = init_mlx_window();
-			real = ft_atof(av[2]);
-			imag = ft_atof(av[3]);
+			real = ft_atof(av[2] , &data);
+			imag = ft_atof(av[3] , &data);
 			data.fractal_type = 1;
 			julia(&data, real, imag);
 		}
@@ -54,4 +54,5 @@ int main(int ac, char **av)
 	mlx_hook(data.win, 17, 0, close_window, &data);
 	mlx_mouse_hook(data.win, m_zoom, &data);
 	mlx_loop(data.mlx);
+	free(&data);
 }
