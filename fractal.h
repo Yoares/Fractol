@@ -50,7 +50,6 @@ t_data	init_mlx_window(void);
 double	ft_atof(const char *str, t_data *data);
 void	julia(t_data *data, double real, double imag);
 void	mandelbrot(t_data *data);
-void	pixel_to_complex(int x, int y, double *real, double *imag, t_data *data);
 int		key_hook(int keycode, t_data *data);
 int		close_window(t_data *data);
 void	error_message(void);

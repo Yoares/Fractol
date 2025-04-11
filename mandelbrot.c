@@ -12,12 +12,6 @@
 
 #include "fractal.h"
 
-void	pixel_to_complex(int x, int y, double *real, double *imag, t_data *data)
-{
-	*real = (data->min_real) + ((double)x / WIDTH) * (data->max_real - data->min_real);
-	*imag = (data->min_imag) + ((double)y / HEIGHT) * (data->max_imag - data->min_imag);
-}
-
 int	mandelbrot_itiration(double real, double imag, int max_iter)
 {
 	double	z_real;
@@ -57,7 +51,10 @@ void	mandelbrot(t_data *data)
 		x = 0;
 		while (x < WIDTH)
 		{
-			pixel_to_complex(x, y, &real, &imag, data);
+			real = (data->min_real) + ((double)x / WIDTH)
+				* (data->max_real - data->min_real);
+			imag = (data->min_imag) + ((double)y / HEIGHT)
+				* (data->max_imag - data->min_imag);
 			iter = mandelbrot_itiration(real, imag, data->max_iter);
 			color = get_color(iter, data->max_iter);
 			my_pixel_put(data, x, y, color);

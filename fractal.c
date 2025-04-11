@@ -12,35 +12,35 @@
 
 #include "fractal.h"
 
-int main(int ac, char **av)
+int	main(int ac, char **av)
 {
-	t_data data;
-	double real, imag;
+	t_data	data;
 
+	double (real), (imag);
 	if (ac == 2)
-    {
+	{
 		if (!ft_strcmp(av[1], "mandelbrot"))
-			{
-				data = init_mlx_window();
-				data.fractal_type = 0;
-				mandelbrot(&data);
-			}
+		{
+			data = init_mlx_window();
+			data.fractal_type = 0;
+			mandelbrot(&data);
+		}
 		else if (!ft_strcmp(av[1], "julia"))
 		{
 			data = init_mlx_window();
 			data.fractal_type = 1;
 			julia(&data, DEFAULT_REAL, DEFAULT_IMAG);
 		}
-		else 
+		else
 			error_message();
 	}
-	else if(ac == 4)
+	else if (ac == 4)
 	{
 		if (!ft_strcmp(av[1], "julia"))
 		{
 			data = init_mlx_window();
-			real = ft_atof(av[2] , &data);
-			imag = ft_atof(av[3] , &data);
+			real = ft_atof(av[2], &data);
+			imag = ft_atof(av[3], &data);
 			data.fractal_type = 1;
 			julia(&data, real, imag);
 		}
