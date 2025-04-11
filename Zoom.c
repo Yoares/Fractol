@@ -6,11 +6,11 @@
 /*   By: ykhoussi <ykhoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 15:48:45 by ykhoussi          #+#    #+#             */
-/*   Updated: 2025/04/08 16:32:18 by ykhoussi         ###   ########.fr       */
+/*   Updated: 2025/04/11 14:47:25 by ykhoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "fractal.h"
 
 void	update_bounds(t_data *data)
 {
@@ -32,16 +32,17 @@ void	update_f(t_data *data)
 
 int	m_zoom(int button, int x, int y, t_data *data)
 {
-	double	mouse_real, mouse_imag;
-	double	old_min_real, old_max_real;
-	double	old_min_imag, old_max_imag;
-
+	double (mouse_real), (mouse_imag);
+	double (old_min_real), (old_max_real);
+	double (old_min_imag), (old_max_imag);
 	old_min_real = data->min_real;
 	old_max_real = data->max_real;
 	old_min_imag = data->min_imag;
 	old_max_imag = data->max_imag;
-	mouse_real = old_min_real + ((double)x / WIDTH) * (old_max_real - old_min_real);
-	mouse_imag = old_min_imag + ((double)y / HEIGHT) * (old_max_imag - old_min_imag);
+	mouse_real = old_min_real + ((double)x / WIDTH)
+		* (old_max_real - old_min_real);
+	mouse_imag = old_min_imag
+		+ ((double)y / HEIGHT) * (old_max_imag - old_min_imag);
 	if (button == 4)
 		data->zoom *= 1.1;
 	else if (button == 5)
@@ -49,9 +50,10 @@ int	m_zoom(int button, int x, int y, t_data *data)
 	else
 		return (0);
 	update_bounds(data);
-	data->offset_x += mouse_real - (data->min_real + ((double)x / WIDTH) * (data->max_real - data->min_real));
-	data->offset_y += mouse_imag - (data->min_imag + ((double)y / HEIGHT) * (data->max_imag - data->min_imag));
+	data->offset_x += mouse_real - (data->min_real
+			+ ((double)x / WIDTH) * (data->max_real - data->min_real));
+	data->offset_y += mouse_imag - (data->min_imag
+			+ ((double)y / HEIGHT) * (data->max_imag - data->min_imag));
 	update_f(data);
 	return (0);
 }
-

@@ -1,22 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fractol.c                                          :+:      :+:    :+:   */
+/*   fractal.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykhoussi <ykhoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 00:07:13 by ykhoussi          #+#    #+#             */
-/*   Updated: 2025/04/08 16:30:13 by ykhoussi         ###   ########.fr       */
+/*   Updated: 2025/04/11 14:47:43 by ykhoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "fractal.h"
 
 int main(int ac, char **av)
 {
 	t_data data;
 	double real, imag;
-
 
 	if (ac == 2)
     {
@@ -45,14 +44,13 @@ int main(int ac, char **av)
 			data.fractal_type = 1;
 			julia(&data, real, imag);
 		}
-		else 
+		else
 			error_message();
 	}
-	else 
+	else
 		error_message();
 	mlx_key_hook(data.win, key_hook, &data);
 	mlx_hook(data.win, 17, 0, close_window, &data);
 	mlx_mouse_hook(data.win, m_zoom, &data);
 	mlx_loop(data.mlx);
-	free(&data);
 }

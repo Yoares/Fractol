@@ -4,7 +4,7 @@ CC = cc
 
 FLAGS = -Wall -Wextra -Werror
 
-SRCS = fractol.c mandelboard.c utile.c julia.c mlx_init.c Zoom.c
+SRCS = fractal.c mandelbrot.c utile.c julia.c mlx_init.c Zoom.c utile_2.c
 
 OBJS = $(SRCS:.c=.o)
 

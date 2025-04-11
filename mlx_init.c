@@ -6,41 +6,32 @@
 /*   By: ykhoussi <ykhoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 05:56:56 by ykhoussi          #+#    #+#             */
-/*   Updated: 2025/04/07 14:44:58 by ykhoussi         ###   ########.fr       */
+/*   Updated: 2025/04/11 14:47:30 by ykhoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "fractal.h"
 
 t_data	init_mlx_window(void)
 {
-    t_data data;
+	t_data	data;
 
-    data.mlx = mlx_init();
-    if (!data.mlx)
-    {
-        write (2, "MLX initialization failed", 26);
-        exit(EXIT_FAILURE);
-    }
-    data.win = mlx_new_window(data.mlx, WIDTH, HEIGHT, "Fractol");
-    if (!data.win)
-    {
-        write(2, "Window creation failed", 23);
-        exit(EXIT_FAILURE);
-    }
-    data.img = mlx_new_image(data.mlx, WIDTH, HEIGHT);
-    if (!data.img)
-    {
-        write(2, "Image creation failed", 22);
-        exit(EXIT_FAILURE);
-    }
-    data.addr = mlx_get_data_addr(data.img, &data.bits_per_pixel, &data.line_length, &data.endian);
-    data.min_real = -2.0;
-    data.max_real = 2.0;
-    data.min_imag = -2.0;
-    data.max_imag = 2.0;
-    data.zoom = 1.0;
-    data.max_iter = 50;
-    return (data);
+	data.mlx = mlx_init();
+	if (!data.mlx)
+		exit(EXIT_FAILURE);
+	data.win = mlx_new_window(data.mlx, WIDTH, HEIGHT, "Fractol");
+	if (!data.win)
+		exit(EXIT_FAILURE);
+	data.img = mlx_new_image(data.mlx, WIDTH, HEIGHT);
+	if (!data.img)
+		exit(EXIT_FAILURE);
+	data.addr = mlx_get_data_addr(data.img,
+			&data.bits_per_pixel, &data.line_length, &data.endian);
+	data.min_real = -2.0;
+	data.max_real = 2.0;
+	data.min_imag = -2.0;
+	data.max_imag = 2.0;
+	data.zoom = 1.0;
+	data.max_iter = 50;
+	return (data);
 }
-
